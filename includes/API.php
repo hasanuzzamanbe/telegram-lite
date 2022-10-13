@@ -36,12 +36,6 @@ class API
         return $this;
     }
 
-    public function setParseMode($mode)
-    {
-        $this->parseMode = $mode;
-        return $this;
-    }
-
     public function sendMessage($message, $parseMode = '')
     {
         if (!$message) {

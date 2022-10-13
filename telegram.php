@@ -49,7 +49,7 @@ class WPM_Telegram {
     {
         add_action('admin_init', function() {
             add_settings_section(
-                'my_settings_section',
+                'wpm_telegram_settings_section',
                 'Post On Telegram',
                 array($this, 'renderInstructionSection'), // No callback
                 'general'
@@ -60,7 +60,7 @@ class WPM_Telegram {
                 'Telegram Bot Token',
                 array($this, 'renderSettingsInput'),
                 'general',
-                'my_settings_section',
+                'wpm_telegram_settings_section',
                 array(
                     'wpm_telegram_token'
                 )
@@ -71,7 +71,7 @@ class WPM_Telegram {
                 'Telegram Chat Id',
                 array($this, 'renderSettingsInput'),
                 'general',
-                'my_settings_section',
+                'wpm_telegram_settings_section',
                 array(
                     'wpm_telegram_chat_id'
                 )
