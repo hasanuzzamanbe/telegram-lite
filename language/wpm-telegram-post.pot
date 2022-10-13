@@ -1,0 +1,97 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Telegram - Simply Notify on post publish\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-13 20:40+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.2; wp-6.0.2\n"
+"X-Domain: wpm-telegram-post"
+
+#: telegram.php:150
+msgid "1. Create a Telegram Bot sending <code>/newbot</code>  to"
+msgstr ""
+
+#: telegram.php:154
+msgid "2. Create your Telegram channel"
+msgstr ""
+
+#: telegram.php:155
+msgid "3. Add the BOT on that channel as admin"
+msgstr ""
+
+#: telegram.php:156
+msgid "4. Send a test message on your channel and forward that"
+msgstr ""
+
+#: telegram.php:159
+msgid ""
+"5. It will response with a json just collect the \"forward_from_chat\" Id"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"A Telegram Integration to send automatically new published post on specific "
+"channel."
+msgstr ""
+
+#: telegram.php:152
+msgid "And collect API Token."
+msgstr ""
+
+#: telegram.php:160
+msgid "Example Token"
+msgstr ""
+
+#. Author of the plugin
+msgid "Hasanuzzaman"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://hasanuzzaman.com/"
+msgstr ""
+
+#. URI of the plugin
+msgid "http://wpminers.com/"
+msgstr ""
+
+#: telegram.php:147
+msgid "Instructions:"
+msgstr ""
+
+#: telegram.php:157
+msgid "message to"
+msgstr ""
+
+#: telegram.php:92
+msgid "Save Changes"
+msgstr ""
+
+#: telegram.php:71
+msgid "Telegram - Post publish"
+msgstr ""
+
+#. Name of the plugin
+#: telegram.php:87
+msgid "Telegram - Simply Notify on post publish"
+msgstr ""
+
+#: telegram.php:112
+msgid "Telegram Bot Token"
+msgstr ""
+
+#: telegram.php:123
+msgid "Telegram Chat ID"
+msgstr ""
+
+#: telegram.php:72
+msgid "Telegram settings"
+msgstr ""

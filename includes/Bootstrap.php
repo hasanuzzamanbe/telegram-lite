@@ -23,12 +23,16 @@ class Bootstrap
 
     public function notify($postId, $post)
     {
+        if (!$post->post_date) {
+            return;
+        }
+
         $permalink = get_permalink($postId);
         $title = $post->post_title;
         $author = get_the_author_meta('display_name', $post->post_author);
-        $message = "New post published:\n <strong>$title<strong> \n by- $author \n";
+        $message = "-- New Post Published: --\n <strong>$title<strong> \n ✍️ by- $author \n";
         $message .= "<a href='$permalink'>$permalink</a>";
-        $message .= "\n Post created at: $post->post_date \n\n";
+        $message .= "\n At: $post->post_date \n\n";
 
         $api = $this->getApiClient($this->botToken, $this->chatId);
         $response = $api->sendMessage($message);
