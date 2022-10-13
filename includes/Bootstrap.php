@@ -12,8 +12,14 @@ if (!defined('ABSPATH')) {
  */
 class Bootstrap
 {
-    protected $botToken = '5771707400:AAGTMTzzoBeG3IxFuJcZiqVRDrA-oxWAgro';
-    protected $chatId = '-1001897340045';
+    protected $botToken;
+    protected $chatId;
+
+    public function __construct()
+    {
+        $this->botToken = sanitize_text_field(get_option('wpm_telegram_token'));
+        $this->chatId = sanitize_text_field(get_option('wpm_telegram_chat_id'));
+    }
 
     public function notify($postId, $post)
     {
