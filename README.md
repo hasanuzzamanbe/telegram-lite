@@ -1,13 +1,12 @@
-=== Simple Payment Donations & Subscriptions Plugin by Paymattic - Best Payments Plugin for WP ===
-Contributors: techjewel, hasanuzzamanshamim, wpmanageninja
-Tags: payment form, donations, payments, stripe payments, PayPal, stripe checkout
+=== Telegram - Simply Notify on post publish ===
+Contributors: wpminers, hasanuzzamanshamim
+Tags: telegram channel, telegram auto post, wp notifications when post publish, auto notify, send message telegram
 Requires at least: 4.5
 Tested up to: 6.0
-Stable tag: 4.2.2
+Stable tag: 1.0.0
 Requires PHP: 7.1
 License: GPLv2 or later
-Accept simple payments and donations with Stripe payment forms for free - #1 WP simple payments and fundraising plugin. PayPal, Mollie, Razorpay, Paystack, Square, Payrexx, SSLCOMMERZ also supported. Increase your conversion rate for payments.
-
+Auto send message on telegram channel/Group when post is publish. Easy setup with lite code interface.
 == Description ==
 
 # post-on-telegram
