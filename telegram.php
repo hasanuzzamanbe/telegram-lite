@@ -85,7 +85,7 @@ class WPM_Telegram {
     public function renderSettingsInput($args)
     {
         $option = get_option($args[0]);
-        echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
+        echo '<input style="width: 80%" type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
     }
 
     public function renderInstructionSection()
@@ -95,6 +95,7 @@ class WPM_Telegram {
         ?>
             <div>
                 <h3>Instructions:</h3>
+                <hr style="width:80%; margin: 0;">
                 <p>1. Create a Telegram Bot using <a href="https://telegram.me/BotFather" target="_blank">BotFather</a> And collect API.</p>
                 <p>2. Create your Telegram channel</p>
                 <p>3. Add the BOT on that channel as admin</p>
