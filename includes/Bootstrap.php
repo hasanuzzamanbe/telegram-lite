@@ -1,6 +1,6 @@
 <?php
 
-namespace WPM_Telegram\includes;
+namespace WPM_TelegramLite\includes;
 
 if (!defined('ABSPATH')) {
     exit;
