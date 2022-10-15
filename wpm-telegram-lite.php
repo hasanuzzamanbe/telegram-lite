@@ -53,9 +53,9 @@ class WPM_TelegramLite
         if ($postAfter->post_type != 'post') {
             return;
         }
-        // if ($postAfter->post_status == 'publish' && $postBefore->post_status != 'publish') {
+        if ($postAfter->post_status == 'publish' && $postBefore->post_status != 'publish') {
             (new \WPM_TelegramLite\includes\Bootstrap())->notify($postId, $postAfter);
-        // }
+        }
     }
 
     public function loadClasses()
