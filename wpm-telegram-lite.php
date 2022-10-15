@@ -30,7 +30,7 @@ class WPM_TelegramLite
     public function redirectSettings($plugin)
     {
         if ($plugin == plugin_basename( __FILE__ )) {
-            exit(wp_redirect(admin_url('options-general.php?page=wpm_telegram_settings')));
+            exit(wp_redirect(admin_url('options-general.php?page=wpm_telegram_lite_settings')));
         }
     }
 
@@ -53,10 +53,9 @@ class WPM_TelegramLite
         if ($postAfter->post_type != 'post') {
             return;
         }
-
-        if ($postAfter->post_status == 'publish' && $postBefore->post_status != 'publish') {
+        // if ($postAfter->post_status == 'publish' && $postBefore->post_status != 'publish') {
             (new \WPM_TelegramLite\includes\Bootstrap())->notify($postId, $postAfter);
-        }
+        // }
     }
 
     public function loadClasses()
@@ -67,11 +66,14 @@ class WPM_TelegramLite
 
     public function addMenu()
     {
+        if (!current_user_can('manage_options')) {
+            return;
+        }
         add_options_page(
             __('Telegram - Post publish', 'wpm-telegram-lite'),
             __('Telegram settings', 'wpm-telegram-lite'),
             'manage_options',
-            'wpm_telegram_settings',
+            'wpm_telegram_lite_settings',
             array($this, 'settings_page_render')
         );
     }
@@ -86,8 +88,8 @@ class WPM_TelegramLite
         <div class="wrap">
             <h2><?php esc_html_e('Telegram Lite - Simply Notify on post publish', 'wpm-telegram-lite'); ?></h2>
             <form method="post" action="options.php">
-                <?php settings_fields('wpm_telegram_settings'); ?>
-                <?php do_settings_sections('wpm_telegram_settings'); ?>
+                <?php settings_fields('wpm_telegram_lite_settings'); ?>
+                <?php do_settings_sections('wpm_telegram_lite_settings'); ?>
                 <p class="submit">
                     <input name="submit" type="submit" id="submit" class="button-primary" value="<?php esc_html_e('Save Changes', 'wpm-telegram-lite'); ?>" />
                 </p>
@@ -104,33 +106,33 @@ class WPM_TelegramLite
             'renderInstructionSection',
             '',
             array($this, 'renderInstructionSection'),
-            'wpm_telegram_settings'
+            'wpm_telegram_lite_settings'
         );
 
         add_settings_field(
-            'wpm_telegram_bot_token',
+            'wpm_telegram_lite_bot_token',
             __('Telegram Bot Token', 'wpm-telegram-lite'),
             array($this, 'renderSettingsInput'),
-            'wpm_telegram_settings',
+            'wpm_telegram_lite_settings',
             'renderInstructionSection',
             array(
-                'wpm_telegram_bot_token'
+                'wpm_telegram_lite_bot_token'
             )
         );
 
         add_settings_field(
-            'wpm_telegram_chat_id',
+            'wpm_telegram_lite_chat_id',
             __('Telegram Chat ID', 'wpm-telegram-lite'),
             array($this, 'renderSettingsInput'),
-            'wpm_telegram_settings',
+            'wpm_telegram_lite_settings',
             'renderInstructionSection',
             array(
-                'wpm_telegram_chat_id'
+                'wpm_telegram_lite_chat_id'
             )
         );
 
-        register_setting('wpm_telegram_settings', 'wpm_telegram_bot_token', 'sanitize_text_field');
-        register_setting('wpm_telegram_settings', 'wpm_telegram_chat_id', 'sanitize_text_field');
+        register_setting('wpm_telegram_lite_settings', 'wpm_telegram_lite_bot_token', 'sanitize_text_field');
+        register_setting('wpm_telegram_lite_settings', 'wpm_telegram_lite_chat_id', 'sanitize_text_field');
     }
 
     public function renderSettingsInput($args)
@@ -144,7 +146,7 @@ class WPM_TelegramLite
         ob_start();
         ?>
         <style>
-            .wpm_telegram_container {
+            .wpm_telegram_lite_container {
                 display: flex;
                 justify-content: space-between;
                 max-width: 1084px;
@@ -152,8 +154,8 @@ class WPM_TelegramLite
                 margin-bottom: 60px;
             }
         </style>
-        <div class="wpm_telegram_container">
-            <div class="wpm_telegram_instruction">
+        <div class="wpm_telegram_lite_container">
+            <div class="wpm_telegram_lite_instruction">
                 <h3><?php echo __('Instructions:', 'wpm-telegram-lite'); ?></h3>
                 <hr style="width:80%; margin: 0;">
                 <p>
@@ -169,7 +171,7 @@ class WPM_TelegramLite
                 <p><?php echo __('5. It will response with a json just collect the "forward_from_chat" Id', 'wpm-telegram-lite'); ?></p>
                 </b><?php echo __('Example Token', 'wpm-telegram-lite'); ?> <code>-1001xxxxxxx45</code> </p>
             </div>
-            <div class="wpm_telegram_video">
+            <div class="wpm_telegram_lite_video">
                 <p>See video instruction here 👇</p>
                 <iframe width="420" height="240" src="https://www.youtube.com/embed/X4yOSr2MnIU?&mute=1" allowfullscreen></iframe>
             </div>

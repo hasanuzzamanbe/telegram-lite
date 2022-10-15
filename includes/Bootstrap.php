@@ -17,12 +17,13 @@ class Bootstrap
 
     public function __construct()
     {
-        $this->botToken = sanitize_text_field(get_option('wpm_telegram_token'));
-        $this->chatId = sanitize_text_field(get_option('wpm_telegram_chat_id'));
+        $this->botToken = sanitize_text_field(get_option('wpm_telegram_lite_bot_token'));
+        $this->chatId = sanitize_text_field(get_option('wpm_telegram_lite_chat_id'));
     }
 
     public function notify($postId, $post)
     {
+
         if (!$post->post_date) {
             return;
         }
@@ -41,7 +42,7 @@ class Bootstrap
             do_action('wpm_exception_log', $response->get_error_message());
             return;
         }
-        do_action('wpm_telegram_notify', $response);
+        do_action('wpm_telegram_lite_notify', $response);
     }
 
     protected function getApiClient($token, $chatId = '')
