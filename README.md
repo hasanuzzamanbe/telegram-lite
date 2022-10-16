@@ -9,7 +9,7 @@ License: GPLv2 or later
 Auto send message on telegram channel/Group when post is publish. Easy setup with lite code interface.
 == Description ==
 
-# post-on-telegram
+# Telegram-lite
 A WordPress Plugin to send message on telegram channel/group when new post published.
 
 
